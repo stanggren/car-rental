@@ -36,8 +36,8 @@ const HeaderContent = styled.div`
     .header-bottom{
         display: flex;
         flex-direction: column;
-        margin: 350px 0px 0px 600px;
-        width: 25rem;
+        margin: 350px 0px 0px 700px;
+        width: 21.5rem;
 
         border-left: 1px solid ${props => props.theme.colors._light}
     }
@@ -47,19 +47,10 @@ const HeaderContent = styled.div`
         font-size: ${props => props.theme.fonts.size._mediumHeadline};
         font-weight: 300;
         color: ${props => props.theme.colors._light};
-        padding: 0.5rem 0 0.5rem 3rem;
+        margin: 0.5rem 0 0.5rem 3rem;
 
-    }
-
-    .header-bottom Button {
-        padding: 0.5rem 0 0.5rem 3rem;
-        width: 10rem;
-        color: ${props => props.theme.colors._light};
     }
 `;
-
-
-
 
 const Header = ({primary, margin, children}) => {
     return (

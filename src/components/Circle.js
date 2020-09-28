@@ -11,7 +11,7 @@ const StyledCircle = styled.div`
     padding: 0.2rem;
 
     position: absolute;
-    margin: 25px 0px 0px 116px;
+    margin: 25px 0px 0px 132px;
 `;
 
 const Circle = ({primary, margin, children}) => {

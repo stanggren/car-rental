@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import Button from './components/Button';
 import Header from './components/Header';
+import CarList from './components/CarList'
 
 const MainWrapper = styled.section`
     /* width: 100%; */
@@ -15,8 +15,7 @@ const App = () => {
     return (
         <MainWrapper>
             <Header />
-            {/* <Button primary margin='5rem'>Primary button</Button>
-            <Button>Seconday button</Button> */}
+            <CarList/>
         </MainWrapper>
     )
 }

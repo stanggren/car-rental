@@ -11,7 +11,7 @@ const StyledButton = styled.button`
     border-radius: 0.5rem;
     border: 2px solid #E7E9EA;
     outline: inherit;
-    margin: 2rem 0.5rem 2rem 0rem;
+    margin: 2rem 0rem 2rem 1rem;
 
 
     ${({primary}) => 
@@ -23,15 +23,25 @@ const StyledButton = styled.button`
             border: none;
         `}
 
+        ${({transparent}) => 
+        transparent && 
+        css`
+            background-color: none;
+            color: ${props => props.theme.colors._light};
+            margin: 0.5rem 0 0.5rem 3rem;
+            width: 7.5rem;
+        `}
+
     &:hover {
-        opacity: 0.5;       
+        opacity: 0.5;
+        cursor: pointer;       
     }
 `;
 
-const Button = ({primary, margin, children}) => {
+const Button = ({primary, transparent, children}) => {
     return (
         <>
-            <StyledButton primary={primary}>{children}</StyledButton>
+            <StyledButton transparent={transparent} primary={primary}>{children}</StyledButton>
         </>
     )
 }
