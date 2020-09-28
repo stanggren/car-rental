@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from './components/Button';
+// import Button from './components/Button';
+import Header from './components/Header';
 
 const MainWrapper = styled.section`
-    width: 100%100%;
-    max-width: 1200px;
+    /* width: 100%; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -14,8 +14,9 @@ const MainWrapper = styled.section`
 const App = () => {
     return (
         <MainWrapper>
-            <Button primary margin='5rem'>Primary button</Button>
-            <Button>Seconday button</Button>
+            <Header />
+            {/* <Button primary margin='5rem'>Primary button</Button>
+            <Button>Seconday button</Button> */}
         </MainWrapper>
     )
 }
