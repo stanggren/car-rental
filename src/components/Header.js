@@ -7,11 +7,12 @@ import Circle from '../components/Circle';
 import '../theme/styles.css'
 
 const HeaderContainer = styled.div`
+    width: 100%;
+    height: 100vh;
+
     background-image: url("${hero}");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 100vh;
 `;
 
 const HeaderContent = styled.div`
@@ -22,31 +23,21 @@ const HeaderContent = styled.div`
     padding-top: 9rem;
 
     h1 {
-        font-family: 'Roboto Slab', serif;
+        font-family: ${props => props.theme.fonts.family._robotoSlab};
         font-size: ${props => props.theme.fonts.size._headline};
         font-weight: 200;
         line-height: ${props => props.theme.fonts.lineHeight._headline};
         color: ${props => props.theme.colors._darkPrimary};
     }
-    .header-buttons {
-        display: flex;
-        flex-direction: row;
-    }
     .circle-text{
         margin-top: 0.2rem;
     }
-    
     .header-bottom{
-        display: flex;
-        flex-direction: column;
         margin: 350px 0px 0px 700px;
         width: 21.5rem;
-
         border-left: 1px solid ${props => props.theme.colors._light}
     }
-
     .header-bottom h2 {
-        font-family: 'Roboto', sans-serif;
         font-size: ${props => props.theme.fonts.size._mediumHeadline};
         font-weight: 300;
         color: ${props => props.theme.colors._light};
@@ -61,14 +52,14 @@ const Header = ({primary, margin, children}) => {
             <HeaderContainer>
                 <HeaderContent>
                     <h1>Vi finns i din närhet</h1>
-                    <div className="header-buttons">
+                    <div className="flex-row">
                         <div>
                             <Circle><p className="circle-text">34</p></Circle>
                             <Button>Bilar i lager</Button>
                         </div>
                         <Button primary>Boka verkstad</Button>
                     </div>
-                    <div className="header-bottom">
+                    <div className="header-bottom flex-column">
                         <h2>Spetsa din roadtrip med nya sommardäck</h2>
                         <Button transparent>Köp däck</Button>
                     </div>

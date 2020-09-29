@@ -1,27 +1,25 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import hero from "../assets/hero.png";
-import Button from "../components/Button";
-import Circle from "../components/Circle";
 import person from "../assets/person.jpg";
 import truck from "../assets/truck.jpg";
 
 const CardContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-bottom: 5rem;
+  padding: 1rem 0 5rem 0;
 `;
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+
   width: 31.5rem;
   height: 20rem;
   margin: 3rem 1rem 1rem 1rem;
-  border-radius: 1.7rem;
   padding: 2rem;
 
+  border-radius: 1.7rem;
   background: ${(props) => props.theme.colors._card};
 
   div:nth-child(1) {
@@ -35,43 +33,38 @@ const Card = styled.div`
   ${({ media }) =>
     media &&
     css`
-      background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) ), url("${truck}");
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
+        url("${truck}");
       background-repeat: no-repeat;
       background-size: cover;
 
-      div{
-          display:flex;
-          flex-direction:row;
-        align-items: center;
-          padding-top: 8.5rem;
+      div {
+        padding-top: 8.5rem;
       }
-      
 
-      h3{
-        font-family: "Roboto", sans-serif;
+      h3 {
+        width: 28rem;
         font-size: ${(props) => props.theme.fonts.size._mediumHeadline};
         font-weight: 400;
         color: ${(props) => props.theme.colors._light};
-        width: 28rem;
       }
 
-      button{
-        background:none;
-        outline:none;
-        border:none;
+      button {
+        background: none;
+        outline: none;
+        border: none;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+
+      svg,
+      button {
         width: 3rem;
-        height:3rem;
-      }
-      button:hover{
-        cursor:pointer;
+        height: 3rem;
       }
 
-      svg{
-        width: 3rem;
-        height:3rem;
-      }
-
-      p{
+      p {
         font-family: "Roboto", sans-serif;
         font-size: ${(props) => props.theme.fonts.size._small};
         font-weight: 300;
@@ -93,24 +86,20 @@ const TopContainer = styled.div`
     color: ${(props) => props.theme.colors._darkPrimary};
   }
 
-  .button-container {
-    display: flex;
-    flex-direction: row;
-  }
-
   .button-container button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 2px solid #e7e9ea;
-    border-radius: 0.5rem;
+
     padding: 0.4rem;
-    background: white;
-    font-size: 14px;
-    font-family: "Roboto", serif;
-    font-weight: 500;
     margin-top: 1rem;
     margin-left: 0.2rem;
+
+    border: 2px solid ${(props) => props.theme.colors._border};
+    border-radius: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    background: ${(props) => props.theme.colors._background};
     color: ${(props) => props.theme.colors._darkGray};
   }
 
@@ -120,9 +109,9 @@ const TopContainer = styled.div`
 
   .button-container button:hover {
     cursor: pointer;
-    background: ${props => props.theme.colors._blue};
-    color:${props => props.theme.colors._light};
-    border: 2px solid ${props => props.theme.colors._blue};
+    background: ${(props) => props.theme.colors._blue};
+    color: ${(props) => props.theme.colors._light};
+    border: 2px solid ${(props) => props.theme.colors._blue};
   }
 
   .button-container button:nth-child(1) {
@@ -133,24 +122,23 @@ const TopContainer = styled.div`
     align-items: flex-end;
     height: 5rem;
     width: 5rem;
-    border-radius: 100%;
-    border: 2px solid #e7e9ea;
     object-fit: cover;
-
     margin-left: 7rem;
+    border-radius: 100%;
+    border: 2px solid ${(props) => props.theme.colors._border};
   }
 
   .active {
     border: 2px solid ${(props) => props.theme.colors._darkPrimary}!important;
-    color: ${(props) => props.theme.colors._darkPrimary}!important;
     border-radius: 0.5rem;
+    color: ${(props) => props.theme.colors._darkPrimary}!important;
   }
 
-  .active:hover{
-    cursor:context-menu!important;
+  .active:hover {
     border: 2px solid ${(props) => props.theme.colors._darkPrimary}!important;
-    color: ${(props) => props.theme.colors._darkPrimary}!important;
     background: ${(props) => props.theme.colors._light}!important;
+    color: ${(props) => props.theme.colors._darkPrimary}!important;
+    cursor: context-menu !important;
   }
 `;
 
@@ -160,15 +148,12 @@ const BottomContainer = styled.div`
   margin-top: 4rem;
 
   p {
-    font-family: "Roboto", serif;
     font-size: ${(props) => props.theme.fonts.size._small};
     color: ${(props) => props.theme.colors._darkGray};
     margin-left: 3.5rem;
   }
 
   .reg-container {
-    display: flex;
-    flex-direction: row;
     margin-top: 1rem;
   }
 
@@ -177,18 +162,13 @@ const BottomContainer = styled.div`
     margin-right: 0.5rem;
   }
 
-  .input {
-    display: flex;
-    flex-direction: row;
-  }
-
   .input input {
     width: 3.5rem;
     height: 4.5rem;
-    border-style: none;
     margin-left: 0.5rem;
-    border-radius: 0.5rem;
     padding: 1rem;
+    border-style: none;
+    border-radius: 0.5rem;
     font-size: ${(props) => props.theme.fonts.size._mediumHeadline};
     text-transform: uppercase;
   }
@@ -218,7 +198,7 @@ const Cards = ({ media, children }) => {
           <TopContainer>
             <div>
               <h3>Boka verkstad</h3>
-              <div className="button-container">
+              <div className="button-container flex-row">
                 <button
                   onClick={() => setActive("service")}
                   className={active === "service" ? "active" : ""}
@@ -243,7 +223,7 @@ const Cards = ({ media, children }) => {
           </TopContainer>
           <BottomContainer>
             <p>Fyll i regnummer</p>
-            <div className="reg-container">
+            <div className="reg-container flex-row">
               <svg
                 width="42"
                 height="59"
@@ -312,22 +292,44 @@ const Cards = ({ media, children }) => {
                   fill="#FFEB00"
                 />
               </svg>
-              <div className="input">
-                <input maxLength="1" defaultValue="A" onChange={e => setReg1(e.target.value)}/>
-                <input maxLength="1" onChange={e => setReg2(e.target.value)}/>
-                <input maxLength="1" onChange={e => setReg3(e.target.value)}/>
-                <input maxLength="1" onChange={e => setReg4(e.target.value)}/>
-                <input maxLength="1" onChange={e => setReg5(e.target.value)}/>
-                <input maxLength="1" onChange={e => setReg6(e.target.value)}/>
+              <div className="input flex-row">
+                <input
+                  maxLength="1"
+                  defaultValue="A"
+                  onChange={(e) => setReg1(e.target.value)}
+                />
+                <input
+                  maxLength="1"
+                  onChange={(e) => setReg2(e.target.value)}
+                />
+                <input
+                  maxLength="1"
+                  onChange={(e) => setReg3(e.target.value)}
+                />
+                <input
+                  maxLength="1"
+                  onChange={(e) => setReg4(e.target.value)}
+                />
+                <input
+                  maxLength="1"
+                  onChange={(e) => setReg5(e.target.value)}
+                />
+                <input
+                  maxLength="1"
+                  onChange={(e) => setReg6(e.target.value)}
+                />
               </div>
             </div>
           </BottomContainer>
         </Card>
         <Card media={"media"}>
-          <h3>Följ med på vår roadtrip<br/> och filmserie genom Västsverige.</h3>
-          <div>
+          <h3>
+            Följ med på vår roadtrip
+            <br /> och filmserie genom Västsverige.
+          </h3>
+          <div className="flex-row center-item">
             <button>
-                <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
@@ -335,28 +337,28 @@ const Cards = ({ media, children }) => {
                 height="24"
                 viewBox="0 0 172 172"
                 style={{ fill: "#000000" }}
-                >
+              >
                 <g
-                    fill="none"
-                    fillRule="nonzero"
-                    stroke="none"
-                    strokeWidth="1"
-                    strokeLinecap="butt"
-                    strokeLinejoin="miter"
-                    strokeMiterlimit="10"
-                    strokeDasharray=""
-                    strokeDashoffset="0"
-                    fontFamily="none"
-                    fontWeight="none"
-                    fontSize="none"
-                    textAnchor="none"
+                  fill="none"
+                  fillRule="nonzero"
+                  stroke="none"
+                  strokeWidth="1"
+                  strokeLinecap="butt"
+                  strokeLinejoin="miter"
+                  strokeMiterlimit="10"
+                  strokeDasharray=""
+                  strokeDashoffset="0"
+                  fontFamily="none"
+                  fontWeight="none"
+                  fontSize="none"
+                  textAnchor="none"
                 >
-                    <path d="M0,172v-172h172v172z" fill="none"></path>
-                    <g fill="#ffffff">
+                  <path d="M0,172v-172h172v172z" fill="none"></path>
+                  <g fill="#ffffff">
                     <path d="M86,14.33333c-39.49552,0 -71.66667,32.17115 -71.66667,71.66667c0,39.49552 32.17115,71.66667 71.66667,71.66667c39.49552,0 71.66667,-32.17115 71.66667,-71.66667c0,-39.49552 -32.17115,-71.66667 -71.66667,-71.66667zM86,28.66667c31.74921,0 57.33333,25.58412 57.33333,57.33333c0,31.74921 -25.58412,57.33333 -57.33333,57.33333c-31.74921,0 -57.33333,-25.58412 -57.33333,-57.33333c0,-31.74921 25.58412,-57.33333 57.33333,-57.33333zM71.66667,61.16862v49.66276l43,-24.83138z"></path>
-                    </g>
+                  </g>
                 </g>
-                </svg>
+              </svg>
             </button>
             <p>Avsnitt 2 - Dingle</p>
           </div>

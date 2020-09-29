@@ -1,6 +1,6 @@
 import React from "react";
 
-const getViewBox = name => {
+const getViewBox = (name) => {
   switch (name) {
     case "electric":
       return "0 0 67 61";
@@ -15,34 +15,34 @@ const getViewBox = name => {
   }
 };
 
-const getWidth = name => {
-    switch (name) {
-      case "electric":
-        return "67";
-      case "hybrid":
-        return "67";
-      case "pickup":
-        return "91";
-      case "van":
-        return "100";
-      default:
-        return "100";
-    }
-  };
+const getWidth = (name) => {
+  switch (name) {
+    case "electric":
+      return "67";
+    case "hybrid":
+      return "67";
+    case "pickup":
+      return "91";
+    case "van":
+      return "100";
+    default:
+      return "100";
+  }
+};
 
-const getHeight = name => {
-    switch (name) {
-      case "electric":
-        return "61";
-      case "hybrid":
-        return "67";
-      case "pickup":
-        return "41";
-      case "van":
-        return "100";
-      default:
-        return "100";
-    }
+const getHeight = (name) => {
+  switch (name) {
+    case "electric":
+      return "61";
+    case "hybrid":
+      return "67";
+    case "pickup":
+      return "41";
+    case "van":
+      return "100";
+    default:
+      return "100";
+  }
 };
 
 const getPath = (name, props) => {
