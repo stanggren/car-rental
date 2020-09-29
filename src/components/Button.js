@@ -13,7 +13,6 @@ const StyledButton = styled.button`
     outline: inherit;
     margin: 2rem 0rem 2rem 1rem;
 
-
     ${({primary}) => 
         primary && 
         css`
@@ -39,6 +38,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({primary, transparent, children}) => {
+
     return (
         <>
             <StyledButton transparent={transparent} primary={primary}>{children}</StyledButton>

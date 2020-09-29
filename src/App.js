@@ -11,7 +11,7 @@ const MainWrapper = styled.section`
     flex-direction: column;
 `; 
 
-const App = () => {
+function App() {
     return (
         <MainWrapper>
             <Header />
