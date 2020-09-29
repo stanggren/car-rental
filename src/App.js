@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Header from './components/Header';
-import CarList from './components/CarList'
+import CarList from './components/CarList';
+import Cards from './components/Cards';
 
 const MainWrapper = styled.section`
     /* width: 100%; */
@@ -16,6 +17,7 @@ function App() {
         <MainWrapper>
             <Header />
             <CarList/>
+            <Cards />
         </MainWrapper>
     )
 }

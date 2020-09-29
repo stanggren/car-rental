@@ -22,6 +22,11 @@ const StyledButton = styled.button`
 
             border: none;
             width: 9.47rem;
+
+            &:hover {
+            background-color: ${props => props.theme.colors._darkPrimary_hover};
+            cursor: pointer;       
+        }
         `}
 
         ${({transparent}) => 
@@ -31,10 +36,18 @@ const StyledButton = styled.button`
             color: ${props => props.theme.colors._light};
             margin: 0.5rem 0 0.5rem 3rem;
             width: 7.5rem;
+
+            &:hover {
+            background: ${props => props.theme.colors._blue};
+            color:${props => props.theme.colors._light};
+            border: 2px solid ${props => props.theme.colors._blue};
+            cursor: pointer;       
+            }
         `}
 
     &:hover {
-        opacity: 0.5;
+        background: ${props => props.theme.colors._blue};
+        color:${props => props.theme.colors._light};
         cursor: pointer;       
     }
 `;

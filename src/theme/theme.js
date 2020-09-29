@@ -7,7 +7,9 @@ export default {
         _darkPrimary: '#001A3B',
         _background: '#FFFFFF',
         _card: '#EFF1F5',
-        _light: '#FFFFFF'
+        _light: '#FFFFFF',
+        _darkPrimary_hover:'rgba(0,26,59,0.5)',
+        _light_hover: 'rgba((255,255,255),0.5)'
     },
     fonts: {
         family: {

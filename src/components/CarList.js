@@ -47,6 +47,10 @@ const CarsContainer = styled.div`
         text-decoration: none;
     }
 
+    a:hover {
+        color: ${props => props.theme.colors._blue};
+    }
+
 
 
 `;
@@ -70,6 +74,9 @@ const ListContainer = styled.div`
     }
     .types div button:hover {
         cursor: pointer;
+    }
+    .types div button:focus {
+        outline: none;
     }
     .types div button:nth-child(1) {
         display: flex;
@@ -110,7 +117,9 @@ const ListContainer = styled.div`
     }
     .active{
         border: 2px solid ${props => props.theme.colors._darkPrimary} !important;
-        border-radius: 0.5rem;
+    }
+    .active:hover{
+        cursor:context-menu!important;
     }
 
 
@@ -119,9 +128,6 @@ const ListContainer = styled.div`
 const CarList = () => {
     const [activeType, setActiveType] = useState('1');
     const [activeBrand, setActiveBrand] = useState('2');
-    useEffect(() => {
-        
-      });
 
     const availableAmount = () => {
         var x = list.filter(item => item.active === activeType);
@@ -161,8 +167,7 @@ const CarList = () => {
                 <div>
                     <Circle primary><p className="circle-text">{availableAmount()}</p></Circle>
                     <Button className="show-cars" primary>Visa bilar</Button>
-                </div>
-                
+                </div>                
                 <div className="bottom-border"><a href="/">Se alla bilar i lager</a></div>
             </CarsContainer>
         </>

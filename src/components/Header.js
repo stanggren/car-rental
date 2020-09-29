@@ -4,6 +4,7 @@ import styled, {css} from 'styled-components';
 import hero from '../assets/hero.png';
 import Button from '../components/Button';
 import Circle from '../components/Circle';
+import '../theme/styles.css'
 
 const HeaderContainer = styled.div`
     background-image: url("${hero}");
@@ -11,7 +12,6 @@ const HeaderContainer = styled.div`
     background-size: cover;
     width: 100%;
     height: 100vh;
-
 `;
 
 const HeaderContent = styled.div`
