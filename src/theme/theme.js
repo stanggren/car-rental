@@ -15,7 +15,7 @@ export default {
             _robotoSlab: "'Roboto Slab', serif"
         },
         size: {
-            _headline: '100px',
+            _headline: '80px',
             _mediumHeadline: '30px',
             _button: '20px',
             _small: '16px'

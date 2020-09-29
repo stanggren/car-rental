@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components';
 
 import SVGIcon from "./SVGIcon";
 import Button from "./Button"
+import Circle from '../components/Circle';
 
 const list = [
     {'id': '1', 'type': 'Personbilar', 'active':'1', 'brand':'Volvo', 'svg_name': 'van' ,},
@@ -27,6 +28,27 @@ const CarsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 10rem;
+
+    .circle-text{
+        margin-top: 0.2rem;
+    }
+
+    .bottom-border{
+        display: flex;
+        justify-content: flex-end;
+        width: 65rem;
+        border-bottom: 2px solid #E7E9EA;
+    }
+
+    a {
+        font-family: 'Roboto', serif;
+        font-size: ${props => props.theme.fonts.size._small};
+        color: ${props => props.theme.colors._darkPrimary};
+        text-decoration: none;
+    }
+
+
+
 `;
 const Header = styled.h2`
     font-family: 'Roboto Slab', serif;
@@ -40,11 +62,14 @@ const Header = styled.h2`
 const ListContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding-bottom: 4rem;
+    width: 65rem;
     .types{
         display: flex;
         flex-direction: row;
         justify-content: center;
+    }
+    .types div button:hover {
+        cursor: pointer;
     }
     .types div button:nth-child(1) {
         display: flex;
@@ -60,6 +85,10 @@ const ListContainer = styled.div`
         height: 11rem;
         background: white;
     }
+    .types div button:nth-child(1) p {
+        font-size: ${props => props.theme.fonts.size._button};
+        line-height: ${props => props.theme.fonts.lineHeight._button};
+    }
     .types div button:nth-child(2) {
         width: 9rem;
         margin: 0rem 0rem 2rem 1rem;
@@ -68,34 +97,30 @@ const ListContainer = styled.div`
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 1rem;
+        padding: 0.8rem;
         margin: 1rem;
         border: 2px solid #E7E9EA;
         border-radius: 0.5rem;
         width: 9rem;
         background: white;
-    }
-    .types div button:focus{
-        outline: 0;
-        border: none;
+        font-size: ${props => props.theme.fonts.size._button};
     }
     .svg-icon{
-
-    }
-    .brands{
-
+        height: 200px;
     }
     .active{
-        border: 2px solid green !important;
-
+        border: 2px solid ${props => props.theme.colors._darkPrimary} !important;
+        border-radius: 0.5rem;
     }
+
+
 `;
 
 const CarList = () => {
     const [activeType, setActiveType] = useState('1');
     const [activeBrand, setActiveBrand] = useState('2');
     useEffect(() => {
-        availableAmount();
+        
       });
 
     const availableAmount = () => {
@@ -132,8 +157,13 @@ const CarList = () => {
                     <div className="types">
                     <RenderList list={list} />
                     </div>
-                    <Button primary>{availableAmount()}</Button>
                 </ListContainer>
+                <div>
+                    <Circle primary><p className="circle-text">{availableAmount()}</p></Circle>
+                    <Button className="show-cars" primary>Visa bilar</Button>
+                </div>
+                
+                <div className="bottom-border"><a href="/">Se alla bilar i lager</a></div>
             </CarsContainer>
         </>
     )

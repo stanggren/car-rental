@@ -12,6 +12,7 @@ const StyledButton = styled.button`
     border: 2px solid #E7E9EA;
     outline: inherit;
     margin: 2rem 0rem 2rem 1rem;
+    width: 9rem;
 
     ${({primary}) => 
         primary && 
@@ -20,6 +21,7 @@ const StyledButton = styled.button`
             color: ${props => props.theme.colors._light};
 
             border: none;
+            width: 9.47rem;
         `}
 
         ${({transparent}) => 

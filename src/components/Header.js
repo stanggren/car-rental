@@ -32,6 +32,9 @@ const HeaderContent = styled.div`
         display: flex;
         flex-direction: row;
     }
+    .circle-text{
+        margin-top: 0.2rem;
+    }
     
     .header-bottom{
         display: flex;
@@ -60,7 +63,7 @@ const Header = ({primary, margin, children}) => {
                     <h1>Vi finns i din närhet</h1>
                     <div className="header-buttons">
                         <div>
-                            <Circle>34</Circle>
+                            <Circle><p className="circle-text">34</p></Circle>
                             <Button>Bilar i lager</Button>
                         </div>
                         <Button primary>Boka verkstad</Button>
