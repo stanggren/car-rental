@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 
 import person from "../assets/person.jpg";
 import truck from "../assets/truck.jpg";
+import "../theme/styles.css";
 
 const CardContainer = styled.div`
   display: flex;
@@ -87,10 +88,6 @@ const TopContainer = styled.div`
   }
 
   .button-container button {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
     padding: 0.4rem;
     margin-top: 1rem;
     margin-left: 0.2rem;
@@ -198,7 +195,7 @@ const Cards = ({ media, children }) => {
           <TopContainer>
             <div>
               <h3>Boka verkstad</h3>
-              <div className="button-container flex-row">
+              <div className="button-container flex-row center">
                 <button
                   onClick={() => setActive("service")}
                   className={active === "service" ? "active" : ""}
