@@ -31,7 +31,7 @@ const HeaderContent = styled.div`
     margin-top: 0.2rem;
   }
   .header-bottom {
-    margin: 350px 0px 40px 700px;
+    margin: 350px 0px 40px 740px;
     width: 21.5rem;
     border-left: 1px solid ${(props) => props.theme.colors._light};
   }
