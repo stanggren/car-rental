@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import hero from "../assets/hero.png";
 import Button from "../components/Button";
@@ -7,8 +7,6 @@ import Circle from "../components/Circle";
 import "../theme/styles.css";
 
 const HeaderContainer = styled.div`
-  width: 100%;
-  height: 100vh;
 
   background-image: url("${hero}");
   background-repeat: no-repeat;
@@ -33,7 +31,7 @@ const HeaderContent = styled.div`
     margin-top: 0.2rem;
   }
   .header-bottom {
-    margin: 350px 0px 0px 700px;
+    margin: 350px 0px 40px 700px;
     width: 21.5rem;
     border-left: 1px solid ${(props) => props.theme.colors._light};
   }
